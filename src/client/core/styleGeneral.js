@@ -7,7 +7,7 @@
  */
 
 import {injectGlobal} from "emotion";
-// import {percent, size, rem} from "koutla-swiss";
+import {percent, size} from "koutla-swiss";
 
 injectGlobal({
     "*": {
@@ -20,6 +20,6 @@ injectGlobal({
     },
 
     body: {
-        background: "black",
+        ...size(percent(100)),
     },
 });
