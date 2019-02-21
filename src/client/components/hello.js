@@ -7,6 +7,8 @@
  */
 
 import * as React from "react";
+import Geolocation from "react-geolocation";
+
 export default class HelloWorld extends React.Component {
     render() {
         const mapStyle = {width: "640px", height: "480px"};
@@ -29,11 +31,22 @@ export default class HelloWorld extends React.Component {
         };
         return (
             <div>
-                <h1>{"Hello, world!"}</h1>
-
+                <h1>{"Hello, bro!"}</h1>
+                <Geolocation
+                    render={({
+                        position: {coords: {latitude, longitude} = {}} = {},
+                        error,
+                    }) => (
+                        <div>
+                            {error && <div>{error.message}</div>}
+                            <pre>
+                                {"latitude:"} {latitude}
+                                {"longitude:"} {longitude}
+                            </pre>
+                        </div>
+                    )}
+                />
                 <div id="mapid" style={mapStyle} />
-                <hr />
-                <small>{"becode/Trouvkach"}</small>
             </div>
         );
     }
