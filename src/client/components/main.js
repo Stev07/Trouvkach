@@ -7,6 +7,8 @@
  */
 
 import * as React from "react";
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+
 import {css} from "emotion";
 import {mq, vh} from "koutla-swiss";
 
@@ -30,9 +32,13 @@ const styles = {
 export default class Main extends React.Component {
     render() {
         return (
-            <div className={styles.container}>
-                <Home />
-            </div>
+            <Router>
+                <div className={styles.container}>
+                    <Switch>
+                        <Route exact path="/" component={Home} />
+                    </Switch>
+                </div>
+            </Router>
         );
     }
 }
