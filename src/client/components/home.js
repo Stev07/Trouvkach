@@ -8,17 +8,17 @@
 
 import * as React from "react";
 import {css} from "emotion";
-import {size, flexcolumn, percent, rem} from "koutla-swiss";
+import {size, flexcolumn, percent} from "koutla-swiss";
 
 import imgLogo from "../../img/logo_test.png";
 
 const styles = {
     container: css({
+        ...flexcolumn("center", "center"),
         ...size(percent(100)),
     }),
     logo: css({
-        ...flexcolumn("center", "center"),
-        width: rem(20),
+        width: percent(50),
     }),
 };
 
