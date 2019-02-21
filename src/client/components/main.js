@@ -8,13 +8,22 @@
 
 import * as React from "react";
 import {css} from "emotion";
-import {mq} from "koutla-swiss";
+import {mq, vh} from "koutla-swiss";
 
 import Home from "./home";
 
+import backgroundImg from "../../img/trouvCashImg.jpg";
+
 const styles = {
     container: css({
-        ...mq("min-width:250px"),
+        ...mq("max-width:322px", {
+            height: vh(100),
+            backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.4),
+            rgba(0, 0, 0, 0.4)) ,url(${backgroundImg})`,
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+        }),
     }),
 };
 

@@ -8,23 +8,25 @@
 
 import * as React from "react";
 import {css} from "emotion";
-import {flexrow, size, percent} from "koutla-swiss";
+import {size, flexcolumn, percent, rem} from "koutla-swiss";
+
+import imgLogo from "../../img/logo_test.png";
 
 const styles = {
     container: css({
         ...size(percent(100)),
     }),
-    logo: {
-        ...flexrow("center", "center,"),
-        color: "white",
-    },
+    logo: css({
+        ...flexcolumn("center", "center"),
+        width: rem(20),
+    }),
 };
 
 export default class Home extends React.Component {
     render() {
         return (
             <div className={styles.container}>
-                <h1 className={styles.logo}>{"Logo"}</h1>
+                <img className={styles.logo} src={imgLogo} alt={"logo"} />
             </div>
         );
     }
