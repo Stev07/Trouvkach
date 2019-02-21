@@ -1,14 +1,16 @@
 /* becodeorg/trouvkach
  *
- * /src/client/app.js - Client entry point
+ * /src/client/app.js - app Component
  *
- * coded by leny@BeCode
- * started at 15/02/2019
+ * coded by Andy, Steve D, Dan, Steve P
+ * started at 10/02/2019
  */
 
 import * as React from "react";
 import ReactDOM from "react-dom";
 
-import HelloWorld from "./components/hello";
+import "./core/styleGeneral";
 
-ReactDOM.render(<HelloWorld />, document.querySelector("#app"));
+import Main from "./components/main";
+
+ReactDOM.render(<Main />, document.querySelector("#app"));
