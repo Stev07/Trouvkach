@@ -13,6 +13,7 @@ import {css} from "emotion";
 import {mq, vh} from "koutla-swiss";
 
 import Home from "./home";
+import Map from "./mapPage";
 
 import backgroundImg from "../../img/trouvCashImg.jpg";
 
@@ -36,6 +37,7 @@ export default class Main extends React.Component {
                 <div className={styles.container}>
                     <Switch>
                         <Route exact path="/" component={Home} />
+                        <Route path="/map" component={Map} />
                     </Switch>
                 </div>
             </Router>
