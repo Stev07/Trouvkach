@@ -14,7 +14,7 @@ export default class HelloWorld extends React.Component {
         const mapStyle = {width: "640px", height: "480px"};
 
         window.onload = () => {
-            navigator.geolocation.getCurrentPosition(function(location) {
+            navigator.geolocation.getCurrentPosition(location => {
                 let latlng = new L.LatLng(
                         location.coords.latitude,
                         location.coords.longitude,
