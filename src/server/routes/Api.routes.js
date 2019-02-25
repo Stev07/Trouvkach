@@ -1,6 +1,6 @@
 const express = require("express");
-const banksRouter = require("./Banks.router");
-const terminalsRouter = require("./Terminals.router");
+const banksRouter = require("./Banks.routes");
+const terminalsRouter = require("./Terminals.routes");
 
 let router = new express.Router();
 

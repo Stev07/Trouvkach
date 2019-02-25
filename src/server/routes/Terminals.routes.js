@@ -1,4 +1,4 @@
-import Terminals from "../mdeols/Terminals";
+import Terminals from "../models/Terminals";
 
 const express = require("express");
 
