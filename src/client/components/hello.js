@@ -20,6 +20,7 @@ export default class HelloWorld extends React.Component {
                         location.coords.longitude,
                     ),
                     mymap = L.map("mapid").setView(latlng, 13),
+                    // eslint-disable-next-line no-unused-vars
                     marker = L.marker(latlng).addTo(mymap);
 
                 L.tileLayer(
