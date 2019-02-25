@@ -6,3 +6,5 @@ let router = new express.Router();
 
 router.use("/banks", banksRouter);
 router.use("/terminals", terminalsRouter);
+
+export default router;
