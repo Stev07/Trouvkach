@@ -12,7 +12,7 @@ const {APP_PORT} = process.env;
 const app = express();
 // Appel de Mongoose et config de l'url et de l'authentification
 const mongoose = require("mongoose");
-const uri = "mongodb://mongo/TrouvKach";
+const uri = "mongodb://mongo/trouvkach";
 const connOptions = {
     useNewUrlParser: true,
     authsource: "admin",

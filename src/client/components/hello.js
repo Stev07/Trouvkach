@@ -7,9 +7,30 @@
  */
 
 import * as React from "react";
-// import Geolocation from "react-geolocation";
-// "pk.eyJ1Ijoic3RldjA3IiwiYSI6ImNqc2RkZm13ZTA2Y3o0OW1kb3N2eGo4bGoifQ.xzYNRvfOYN7zcoU8bnabJA"
+import axios from "axios";
 export default class HelloWorld extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            terminal: [],
+            loading: false,
+        };
+    }
+
+    componentDidMount = () => {
+        axios
+            .get(`api/terminals`)
+            .then(res => {
+                const terminal = Object.values(res.data.terminals[0]);
+
+                this.setState({terminal: terminal, loading: true});
+                console.log("Got it !");
+            })
+            .catch(err => {
+                console.log("Something went wrong : ", err.message);
+            });
+    };
+
     render() {
         const mapStyle = {width: "640px", height: "480px"};
 
@@ -37,10 +58,24 @@ export default class HelloWorld extends React.Component {
             });
         };
 
+        const terminals = this.state.terminal.map(element => {
+            return (
+                <div>
+                    <ul>
+                        <li>
+                            {element.address} {element.longitude}{" "}
+                            {element.latitude}
+                        </li>
+                    </ul>
+                </div>
+            );
+        });
+
         return (
             <div>
                 <h1>{"Hello, bro!"}</h1>
                 <div id="mapid" style={mapStyle} />
+                <p>{terminals}</p>
             </div>
         );
     }
