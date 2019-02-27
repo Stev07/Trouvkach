@@ -8,6 +8,8 @@
 
 import * as React from "react";
 import axios from "axios";
+import jeyoDistans from "jeyo-distans";
+
 export default class HelloWorld extends React.Component {
     constructor() {
         super();
@@ -35,6 +37,17 @@ export default class HelloWorld extends React.Component {
         const mapStyle = {width: "640px", height: "480px"};
 
         window.onload = () => {
+            const oLiege = {
+                latitude: 50.633,
+                longitude: 5.567,
+            };
+
+            const oBruxelles = {
+                latitude: 50.846686,
+                longitude: 4.352425,
+            };
+
+            console.log(jeyoDistans(oLiege, oBruxelles));
             navigator.geolocation.getCurrentPosition(location => {
                 let latlng = new L.LatLng(
                         location.coords.latitude,
